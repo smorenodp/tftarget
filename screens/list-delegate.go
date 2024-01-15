@@ -26,10 +26,10 @@ func newItemDelegate(keys *delegateKeyMap) DefaultDelegate {
 
 	d.UpdateFunc = func(msg tea.Msg, m *list.Model) (output tea.Cmd) {
 		var title string
-		var i terraform.ResourceChange
+		var i *terraform.ResourceChange
 		var ok bool
 
-		if i, ok = m.SelectedItem().(terraform.ResourceChange); ok {
+		if i, ok = m.SelectedItem().(*terraform.ResourceChange); ok {
 			title = i.Title()
 		} else {
 			return nil
@@ -45,7 +45,6 @@ func newItemDelegate(keys *delegateKeyMap) DefaultDelegate {
 				} else {
 					output = m.NewStatusMessage(statusMessageStyle("You removed " + title))
 				}
-				m.SetItem(m.Index(), i)
 			case key.Matches(msg, keys.remove):
 				index := m.Index()
 				m.RemoveItem(index)

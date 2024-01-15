@@ -27,8 +27,8 @@ func (c Command) String() string {
 	var targets []string
 	c.Targets = []string{}
 	for _, i := range *c.items {
-		if i.(ResourceChange).IsSelected() {
-			c.Targets = append(c.Targets, i.(ResourceChange).Title())
+		if i.(*ResourceChange).IsSelected() {
+			c.Targets = append(c.Targets, i.(*ResourceChange).Title())
 		}
 	}
 	for _, t := range c.Targets {

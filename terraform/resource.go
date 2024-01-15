@@ -42,7 +42,7 @@ func (list ResourceChangeList) Filter(fn resourceFilter) (returnList ResourceCha
 	return
 }
 
-func (r ResourceChange) Title() string       { return r.Change.Resource.Addr }
-func (r ResourceChange) Description() string { return r.Change.Action }
-func (r ResourceChange) FilterValue() string { return r.Change.Resource.Addr }
-func (r ResourceChange) IsSelected() bool    { return r.Selected }
+func (r *ResourceChange) Title() string       { return r.Change.Resource.Addr }
+func (r *ResourceChange) Description() string { return r.Change.Action }
+func (r *ResourceChange) FilterValue() string { return r.Change.Resource.Addr }
+func (r *ResourceChange) IsSelected() bool    { return r.Selected }

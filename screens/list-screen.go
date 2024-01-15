@@ -18,7 +18,7 @@ type listKeyMap struct {
 func (l *ListScreen) TargetAll() {
 	items := l.List.Items()
 	for index, i := range items {
-		r := i.(terraform.ResourceChange)
+		r := i.(*terraform.ResourceChange)
 		r.Selected = !l.targetedAll
 		l.List.SetItem(index, r)
 	}
@@ -57,14 +57,14 @@ func NewListScreen(resources []terraform.ResourceChange, width, height int) List
 	)
 
 	// Make initial list of items
-
 	// Setup list
 	delegate := newItemDelegate(delegateKeys)
-	test := []list.Item{}
+	items := []list.Item{}
 	for _, r := range resources {
-		test = append(test, r)
+		aux := r
+		items = append(items, &aux)
 	}
-	resourceList := list.New(test, delegate, 0, 0)
+	resourceList := list.New(items, delegate, 0, 0)
 	resourceList.Title = "Resources"
 	resourceList.Styles.Title = titleStyle
 	resourceList.AdditionalFullHelpKeys = func() []key.Binding {
@@ -119,8 +119,8 @@ func (l ListScreen) Update(msg tea.Msg) (MainScreen, tea.Cmd) {
 			items := l.List.Items()
 			var resources []terraform.ResourceChange = []terraform.ResourceChange{}
 			for _, i := range items {
-				if resource, ok := i.(terraform.ResourceChange); ok && resource.IsSelected() {
-					resources = append(resources, resource)
+				if resource, ok := i.(*terraform.ResourceChange); ok && resource.IsSelected() {
+					resources = append(resources, *resource)
 				}
 			}
 			return l, l.returnCommand("apply")
@@ -128,8 +128,8 @@ func (l ListScreen) Update(msg tea.Msg) (MainScreen, tea.Cmd) {
 			items := l.List.Items()
 			var resources []terraform.ResourceChange = []terraform.ResourceChange{}
 			for _, i := range items {
-				if resource, ok := i.(terraform.ResourceChange); ok && resource.IsSelected() {
-					resources = append(resources, resource)
+				if resource, ok := i.(*terraform.ResourceChange); ok && resource.IsSelected() {
+					resources = append(resources, *resource)
 				}
 			}
 			return l, l.returnCommand("plan")
@@ -141,7 +141,6 @@ func (l ListScreen) Update(msg tea.Msg) (MainScreen, tea.Cmd) {
 	}
 	newListModel, cmd := l.List.Update(msg)
 	l.List = newListModel
-
 	return l, cmd
 }
 

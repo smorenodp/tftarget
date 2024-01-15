@@ -185,7 +185,7 @@ func (d DefaultDelegate) Render(w io.Writer, m list.Model, index int, item list.
 	if i, ok := item.(DefaultItem); ok {
 		title = i.Title()
 		desc = i.Description()
-		selected = i.(terraform.ResourceChange).IsSelected()
+		selected = i.(*terraform.ResourceChange).IsSelected()
 	} else {
 		return
 	}
