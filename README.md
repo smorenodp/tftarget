@@ -17,11 +17,11 @@ The tftarget automatically looks for the variable file in a vars/ folder found i
 
 Once you launch the binary, the screen will show a spinner screen while it's loading the resources where there are changes
 
-![Spinner Screen](https://github.com/smorenodp/tftarget/blob/main/images/spinner_screen.png)
+![Spinner Screen](https://github.com/smorenodp/tftarget/blob/master/images/spinner_screen.png)
 
 Once it loads every resource the screen changes into a list containing the name of the resource and the type of change which can be update, replace, delete and create each with a different color.
 
-![List Screen](https://github.com/smorenodp/tftarget/blob/main/images/list_screen.png)
+![List Screen](https://github.com/smorenodp/tftarget/blob/master/images/list_screen.png)
 
 In this screen you can use different keys to accomplish certain tasks:
 
