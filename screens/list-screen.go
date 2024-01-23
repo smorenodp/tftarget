@@ -35,18 +35,10 @@ func newListKeyMap() *listKeyMap {
 			key.WithKeys("p"),
 			key.WithHelp("p", "Launch plan with targets"),
 		),
-		// toggleHelpMenu: key.NewBinding(
-		// 	key.WithKeys("h"),
-		// 	key.WithHelp("h", "toggle help"),
-		// ),
 		toggleTargetAll: key.NewBinding(
 			key.WithKeys("*"),
 			key.WithHelp("*", "target all"),
 		),
-		// toggleCommand: key.NewBinding(
-		// 	key.WithKeys("c"),
-		// 	key.WithHelp("c", "Show command"),
-		// ),
 	}
 }
 

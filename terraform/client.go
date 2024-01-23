@@ -31,6 +31,27 @@ func NewClient(dir string) (*TFClient, error) {
 }
 
 func (tf *TFClient) Plan() (list ResourceChangeList, err error) {
+	f, _ := os.Create("resources")
+	defer f.Close()
+	workspace, _ := tf.WorkspaceShow(context.Background())
+	options := []tfexec.PlanOption{tfexec.Out("/tmp/.tftarget")}
+	if _, err = os.Stat(fmt.Sprintf("%s/vars/%s.tfvars", tf.ChDir, workspace)); err == nil {
+		options = append(options, tfexec.VarFile(fmt.Sprintf("%s/vars/%s.tfvars", tf.ChDir, workspace)))
+	}
+	_, err = tf.Terraform.Plan(context.Background(), options...)
+	f.WriteString("--------------------------------------------------------\n")
+	plan, _ := tf.Terraform.ShowPlanFile(context.Background(), "/tmp/.tftarget")
+	for _, c := range plan.ResourceChanges {
+		aux := NewPlanChange(c)
+		f.WriteString("--------------------------------------------------------\n")
+		f.WriteString(fmt.Sprintf("Resource %s", c.Address))
+		f.WriteString(fmt.Sprintf("%s\n", aux))
+		f.WriteString("--------------------------------------------------------\n\n")
+	}
+	return nil, err
+}
+
+func (tf *TFClient) PlanOld() (list ResourceChangeList, err error) {
 	//Generate plan
 	var buffer bytes.Buffer
 	workspace, _ := tf.WorkspaceShow(context.Background())
@@ -39,8 +60,12 @@ func (tf *TFClient) Plan() (list ResourceChangeList, err error) {
 	} else {
 		_, err = tf.PlanJSON(context.Background(), &buffer, tfexec.VarFile(fmt.Sprintf("%s/vars/%s.tfvars", tf.ChDir, workspace)))
 	}
+
 	buffer.UnreadByte()
-	lines := strings.Split(buffer.String(), "\n")
+	output := buffer.String()
+	f, _ := os.Create("output")
+	f.WriteString(output)
+	lines := strings.Split(output, "\n")
 
 	for _, line := range lines {
 		var output ResourceChange
