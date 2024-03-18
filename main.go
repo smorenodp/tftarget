@@ -2,11 +2,9 @@ package main
 
 import (
 	"flag"
-	"log"
 	"os"
 
 	"github.com/smorenodp/tftarget/cli"
-	"github.com/smorenodp/tftarget/terraform"
 )
 
 // func main() {
@@ -60,10 +58,13 @@ func main() {
 	flag.StringVar(&dir, "dir", currentDir, "Directory to launch terraform")
 	flag.Parse()
 
-	tf, err := terraform.NewClient(dir)
-	if err != nil {
-		log.Fatalf("There was an error - %s\n", err)
-	}
-	m := cli.New(tf)
+	// tf, err := terraform.NewClient(dir)
+	// if err != nil {
+	// 	log.Fatalf("There was an error - %s\n", err)
+	// }
+	// m := cli.New(tf)
+	// m.Run()
+
+	m := cli.New()
 	m.Run()
 }

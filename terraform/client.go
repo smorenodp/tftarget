@@ -54,6 +54,7 @@ func (tf *TFClient) Plan() (list ResourceChangeList, err error) {
 func (tf *TFClient) PlanOld() (list ResourceChangeList, err error) {
 	//Generate plan
 	var buffer bytes.Buffer
+	f, _ := os.Create("output")
 	workspace, _ := tf.WorkspaceShow(context.Background())
 	if _, err = os.Stat(fmt.Sprintf("%s/vars/%s.tfvars", tf.ChDir, workspace)); err != nil {
 		_, err = tf.PlanJSON(context.Background(), &buffer)
@@ -70,6 +71,9 @@ func (tf *TFClient) PlanOld() (list ResourceChangeList, err error) {
 	for _, line := range lines {
 		var output ResourceChange
 		json.Unmarshal([]byte(line), &output)
+		f.WriteString("-----------------------------------------------------")
+		f.WriteString(fmt.Sprintf("The line is %s\n", line))
+		f.WriteString(fmt.Sprintf("The resource %+v has action %s\n", output.Change.Resource, output.Change.Action))
 		list = append(list, output)
 	}
 	if err != nil {
@@ -84,6 +88,6 @@ func (tf *TFClient) PlanOld() (list ResourceChangeList, err error) {
 	}
 
 	return list.Filter(func(rc ResourceChange) bool {
-		return rc.Change.Action != ""
+		return (rc.Change.Action != "" && rc.Type != "resource_drift")
 	}), nil
 }

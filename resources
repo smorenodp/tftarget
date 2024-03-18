@@ -1,0 +1,365 @@
+--------------------------------------------------------
+--------------------------------------------------------
+Resource ecs_omicron_test.endpoint["consul_endpoint"]Unknown consumer_id
+Changing in name from consul_endpoint-pub.play-es-1 to consul_endpoint-pub.play-es-1
+Unknown id
+Default option for key steps with value [map[body: body_json:map[] checks:{"res.status":{"$eq":200}} headers:map[] method:GET name:Checking consul_endpoint-pub.play-es-1 endpoint proxy:false timeout:10s type:REQUEST url:https://consul.meigas.play.es.ether.igrupobbva/v1/status/peers vars:map[]]]
+Default option for key notifier with value [map[alarm://sigma.work-01/ns/ether.meigas/alarms/consul_endpoint-pub.play-es-1 name:CHECK_STATUS notify:ALWAYS service: to: type:SIGMA url:]]
+Unknown region
+Changing in state from enabled to enabled
+Default option for key schedule with value [map[interval:5m]]
+Default option for key timeouts with value <nil>
+Unknown _id
+Changing in description from Testing consul.play-es-1 from outside DC to Testing consul.play-es-1 from outside DC
+Unknown locator
+Unknown ns
+--------------------------------------------------------
+
+--------------------------------------------------------
+Resource ecs_omicron_test.endpoint["nomad_endpoint"]Unknown id
+Changing in state from enabled to enabled
+Default option for key notifier with value [map[alarm://sigma.work-01/ns/ether.meigas/alarms/nomad_endpoint-pub.play-es-1 name:CHECK_STATUS notify:ALWAYS service: to: type:SIGMA url:]]
+Unknown _id
+Unknown region
+Default option for key schedule with value [map[interval:5m]]
+Unknown ns
+Default option for key steps with value [map[body: body_json:map[] checks:{"res.status":{"$eq":200}} headers:map[] method:GET name:Checking nomad_endpoint-pub.play-es-1 endpoint proxy:false timeout:10s type:REQUEST url:https://nomad.meigas.play.es.ether.igrupobbva/v1/status/peers vars:map[]]]
+Default option for key timeouts with value <nil>
+Unknown consumer_id
+Changing in description from Testing nomad.play-es-1 from outside DC to Testing nomad.play-es-1 from outside DC
+Unknown locator
+Changing in name from nomad_endpoint-pub.play-es-1 to nomad_endpoint-pub.play-es-1
+--------------------------------------------------------
+
+--------------------------------------------------------
+Resource ecs_omicron_test.endpoint["prometheus_endpoint"]Default option for key steps with value [map[body: body_json:map[] checks:{"res.status":{"$eq":200}} headers:map[] method:GET name:Checking prometheus_endpoint-pub.play-es-1 endpoint proxy:false timeout:10s type:REQUEST url:https://prometheus.eu1.meigas.lab-01.ether.igrupobbva/-/ready vars:map[]]]
+Unknown locator
+Changing in name from prometheus_endpoint-pub.play-es-1 to prometheus_endpoint-pub.play-es-1
+Unknown id
+Default option for key notifier with value [map[alarm://sigma.work-01/ns/ether.meigas/alarms/prometheus_endpoint-pub.play-es-1 name:CHECK_STATUS notify:ALWAYS service: to: type:SIGMA url:]]
+Changing in state from enabled to enabled
+Default option for key timeouts with value <nil>
+Unknown _id
+Unknown consumer_id
+Unknown region
+Default option for key schedule with value [map[interval:5m]]
+Changing in description from Testing prometheus.play-es-1 from outside DC to Testing prometheus.play-es-1 from outside DC
+Unknown ns
+--------------------------------------------------------
+
+--------------------------------------------------------
+Resource ecs_omicron_test.endpoint["vault_endpoint"]Default option for key timeouts with value <nil>
+Unknown _id
+Unknown consumer_id
+Changing in description from Testing vaut.play-es-1 from outside DC to Testing vaut.play-es-1 from outside DC
+Default option for key notifier with value [map[alarm://sigma.work-01/ns/ether.meigas/alarms/vault_endpoint-pub.play-es-1 name:CHECK_STATUS notify:ALWAYS service: to: type:SIGMA url:]]
+Default option for key schedule with value [map[interval:5m]]
+Changing in state from enabled to enabled
+Default option for key steps with value [map[body: body_json:map[] checks:{"res.status":{"$eq":200}} headers:map[] method:GET name:Checking vault_endpoint-pub.play-es-1 endpoint proxy:false timeout:10s type:REQUEST url:https://vault.meigas.play.es.ether.igrupobbva/v1/sys/health vars:map[]]]
+Changing in name from vault_endpoint-pub.play-es-1 to vault_endpoint-pub.play-es-1
+Unknown id
+Unknown ns
+Unknown locator
+Unknown region
+--------------------------------------------------------
+
+--------------------------------------------------------
+Resource ecs_permissions.endpoint["consul_endpoint"]Default option for key actions with value []
+Unknown consumer
+Changing in group from  to %!!(MISSING)s(<nil>)
+Changing in path from /v1/ns/ether.meigas to /v1/ns/ether.meigas
+Changing in service from crm to crm
+Changing in description from Set permissions to omicron consumer consul_endpoint-pub.play-es-1 to check public play-es-1 endpoints to Set permissions to omicron consumer consul_endpoint-pub.play-es-1 to check public play-es-1 endpoints
+Unknown id
+Default option for key roles with value [sigma.statusUpdater]
+Default option for key timeouts with value <nil>
+--------------------------------------------------------
+
+--------------------------------------------------------
+Resource ecs_permissions.endpoint["nomad_endpoint"]Changing in description from Set permissions to omicron consumer nomad_endpoint-pub.play-es-1 to check public play-es-1 endpoints to Set permissions to omicron consumer nomad_endpoint-pub.play-es-1 to check public play-es-1 endpoints
+Changing in group from  to %!!(MISSING)s(<nil>)
+Default option for key roles with value [sigma.statusUpdater]
+Default option for key timeouts with value <nil>
+Default option for key actions with value []
+Unknown consumer
+Unknown id
+Changing in path from /v1/ns/ether.meigas to /v1/ns/ether.meigas
+Changing in service from crm to crm
+--------------------------------------------------------
+
+--------------------------------------------------------
+Resource ecs_permissions.endpoint["prometheus_endpoint"]Changing in service from crm to crm
+Default option for key actions with value []
+Changing in description from Set permissions to omicron consumer prometheus_endpoint-pub.play-es-1 to check public play-es-1 endpoints to Set permissions to omicron consumer prometheus_endpoint-pub.play-es-1 to check public play-es-1 endpoints
+Changing in group from  to %!!(MISSING)s(<nil>)
+Default option for key roles with value [sigma.statusUpdater]
+Unknown consumer
+Unknown id
+Changing in path from /v1/ns/ether.meigas to /v1/ns/ether.meigas
+Default option for key timeouts with value <nil>
+--------------------------------------------------------
+
+--------------------------------------------------------
+Resource ecs_permissions.endpoint["vault_endpoint"]Changing in path from /v1/ns/ether.meigas to /v1/ns/ether.meigas
+Default option for key roles with value [sigma.statusUpdater]
+Changing in service from crm to crm
+Default option for key timeouts with value <nil>
+Unknown id
+Unknown consumer
+Changing in description from Set permissions to omicron consumer vault_endpoint-pub.play-es-1 to check public play-es-1 endpoints to Set permissions to omicron consumer vault_endpoint-pub.play-es-1 to check public play-es-1 endpoints
+Changing in group from  to %!!(MISSING)s(<nil>)
+Default option for key actions with value []
+--------------------------------------------------------
+
+--------------------------------------------------------
+Resource ecs_sigma_alarm.deadman_switch%!s(PANIC=String method: interface conversion: interface {} is nil, not map[string]interface {})
+--------------------------------------------------------
+
+--------------------------------------------------------
+Resource ecs_sigma_alarm.endpoint["consul_endpoint"]Changing in status from STALLED to STALLED
+Default option for key timeouts with value <nil>
+Unknown id
+Changing in name from consul_endpoint-pub.play-es-1 to consul_endpoint-pub.play-es-1
+Unknown ns
+Unknown locator
+Changing in monitored_resource from default to //mr.work-01/ns/ether.meigas/mrs/default
+Printing the output for key properties
+Changing in alarmGroup from external_endpoints to external_endpoints
+Changing in description from This alarm indicates if consul is reachable outside DC to This alarm indicates if consul is reachable outside DC
+Changing in group from consul_endpoint.play-es-1 to consul_endpoint.play-es-1
+Changing in serviceName from consul to consul
+Changing in serviceOwner from Meigas Team to Meigas Team
+Changing in supportPhone from 662951309 to 662951309
+Changing in actionIfStalled from Do nothing to Do nothing
+Changing in actionIfWarning from Send email incidence to the Support Group to Send email incidence to the Support Group
+Changing in datacenter from play-es-1 to play-es-1
+Changing in supportEmail from meigas.group@bbva.com to meigas.group@bbva.com
+Changing in actionIfCritical from Send email incidence to the Support Group to Send email incidence to the Support Group
+Adding element with key documentation and value Check online documentation at https://hello.meigas.cloud.
+Finishing printing the output for key properties
+Unknown region
+Unknown _id
+Changing in alarm_type from //sigma.work-01/ns/ether.meigas/alarm-types/generic to //sigma.work-01/ns/ether.meigas/alarm-types/generic
+Changing in enabled from true to %!!(MISSING)s(bool=true)
+--------------------------------------------------------
+
+--------------------------------------------------------
+Resource ecs_sigma_alarm.endpoint["nomad_endpoint"]Changing in monitored_resource from default to //mr.work-01/ns/ether.meigas/mrs/default
+Changing in name from nomad_endpoint-pub.play-es-1 to nomad_endpoint-pub.play-es-1
+Printing the output for key properties
+Changing in datacenter from play-es-1 to play-es-1
+Changing in description from This alarm indicates if nomad is reachable outside DC to This alarm indicates if nomad is reachable outside DC
+Changing in group from nomad_endpoint.play-es-1 to nomad_endpoint.play-es-1
+Changing in supportPhone from 662951309 to 662951309
+Changing in serviceName from nomad to nomad
+Changing in serviceOwner from Meigas Team to Meigas Team
+Changing in supportEmail from meigas.group@bbva.com to meigas.group@bbva.com
+Changing in actionIfCritical from Send email incidence to the Support Group to Send email incidence to the Support Group
+Changing in actionIfStalled from Do nothing to Do nothing
+Changing in actionIfWarning from Send email incidence to the Support Group to Send email incidence to the Support Group
+Changing in alarmGroup from external_endpoints to external_endpoints
+Adding element with key documentation and value Check online documentation at https://hello.meigas.cloud.
+Finishing printing the output for key properties
+Unknown region
+Unknown _id
+Changing in alarm_type from //sigma.work-01/ns/ether.meigas/alarm-types/generic to //sigma.work-01/ns/ether.meigas/alarm-types/generic
+Changing in enabled from true to %!!(MISSING)s(bool=true)
+Unknown id
+Changing in status from STALLED to STALLED
+Default option for key timeouts with value <nil>
+Unknown locator
+Unknown ns
+--------------------------------------------------------
+
+--------------------------------------------------------
+Resource ecs_sigma_alarm.endpoint["prometheus_endpoint"]Unknown ns
+Unknown _id
+Changing in alarm_type from //sigma.work-01/ns/ether.meigas/alarm-types/generic to //sigma.work-01/ns/ether.meigas/alarm-types/generic
+Changing in enabled from true to %!!(MISSING)s(bool=true)
+Unknown id
+Unknown locator
+Changing in name from prometheus_endpoint-pub.play-es-1 to prometheus_endpoint-pub.play-es-1
+Changing in monitored_resource from default to //mr.work-01/ns/ether.meigas/mrs/default
+Printing the output for key properties
+Changing in group from prometheus_endpoint.play-es-1 to prometheus_endpoint.play-es-1
+Changing in serviceName from prometheus to prometheus
+Changing in actionIfStalled from Do nothing to Do nothing
+Changing in actionIfWarning from Send email incidence to the Support Group to Send email incidence to the Support Group
+Changing in alarmGroup from external_endpoints to external_endpoints
+Changing in serviceOwner from Meigas Team to Meigas Team
+Changing in supportEmail from meigas.group@bbva.com to meigas.group@bbva.com
+Changing in supportPhone from 662951309 to 662951309
+Changing in actionIfCritical from Send email incidence to the Support Group to Send email incidence to the Support Group
+Changing in datacenter from play-es-1 to play-es-1
+Changing in description from This alarm indicates if prometheus is reachable outside DC to This alarm indicates if prometheus is reachable outside DC
+Adding element with key documentation and value Check online documentation at https://hello.meigas.cloud.
+Finishing printing the output for key properties
+Unknown region
+Changing in status from STALLED to STALLED
+Default option for key timeouts with value <nil>
+--------------------------------------------------------
+
+--------------------------------------------------------
+Resource ecs_sigma_alarm.endpoint["vault_endpoint"]Changing in status from STALLED to STALLED
+Unknown _id
+Unknown id
+Unknown locator
+Changing in monitored_resource from default to //mr.work-01/ns/ether.meigas/mrs/default
+Unknown ns
+Default option for key timeouts with value <nil>
+Changing in alarm_type from //sigma.work-01/ns/ether.meigas/alarm-types/generic to //sigma.work-01/ns/ether.meigas/alarm-types/generic
+Changing in enabled from true to %!!(MISSING)s(bool=true)
+Changing in name from vault_endpoint-pub.play-es-1 to vault_endpoint-pub.play-es-1
+Printing the output for key properties
+Changing in actionIfWarning from Send email incidence to the Support Group to Send email incidence to the Support Group
+Changing in description from This alarm indicates if vaut is reachable outside DC to This alarm indicates if vaut is reachable outside DC
+Changing in group from vault_endpoint.play-es-1 to vault_endpoint.play-es-1
+Changing in datacenter from play-es-1 to play-es-1
+Changing in serviceName from vaut to vaut
+Changing in serviceOwner from Meigas Team to Meigas Team
+Changing in supportEmail from meigas.group@bbva.com to meigas.group@bbva.com
+Changing in supportPhone from 662951309 to 662951309
+Changing in actionIfCritical from Send email incidence to the Support Group to Send email incidence to the Support Group
+Changing in actionIfStalled from Do nothing to Do nothing
+Changing in alarmGroup from external_endpoints to external_endpoints
+Adding element with key documentation and value Check online documentation at https://hello.meigas.cloud.
+Finishing printing the output for key properties
+Unknown region
+--------------------------------------------------------
+
+--------------------------------------------------------
+Resource ecs_sigma_alarm.generic["alerter_service"]%!s(PANIC=String method: interface conversion: interface {} is nil, not map[string]interface {})
+--------------------------------------------------------
+
+--------------------------------------------------------
+Resource ecs_sigma_alarm.generic["bucardo_provision_service"]%!s(PANIC=String method: interface conversion: interface {} is nil, not map[string]interface {})
+--------------------------------------------------------
+
+--------------------------------------------------------
+Resource ecs_sigma_alarm.generic["bucardo_service"]%!s(PANIC=String method: interface conversion: interface {} is nil, not map[string]interface {})
+--------------------------------------------------------
+
+--------------------------------------------------------
+Resource ecs_sigma_alarm.generic["consul_cluster"]%!s(PANIC=String method: interface conversion: interface {} is nil, not map[string]interface {})
+--------------------------------------------------------
+
+--------------------------------------------------------
+Resource ecs_sigma_alarm.generic["envoy_node"]%!s(PANIC=String method: interface conversion: interface {} is nil, not map[string]interface {})
+--------------------------------------------------------
+
+--------------------------------------------------------
+Resource ecs_sigma_alarm.generic["fabio_service"]%!s(PANIC=String method: interface conversion: interface {} is nil, not map[string]interface {})
+--------------------------------------------------------
+
+--------------------------------------------------------
+Resource ecs_sigma_alarm.generic["frontier_service"]%!s(PANIC=String method: interface conversion: interface {} is nil, not map[string]interface {})
+--------------------------------------------------------
+
+--------------------------------------------------------
+Resource ecs_sigma_alarm.generic["gateway_internal_resouces"]%!s(PANIC=String method: interface conversion: interface {} is nil, not map[string]interface {})
+--------------------------------------------------------
+
+--------------------------------------------------------
+Resource ecs_sigma_alarm.generic["gateway_internal_status"]%!s(PANIC=String method: interface conversion: interface {} is nil, not map[string]interface {})
+--------------------------------------------------------
+
+--------------------------------------------------------
+Resource ecs_sigma_alarm.generic["gateway_mesh_resources"]%!s(PANIC=String method: interface conversion: interface {} is nil, not map[string]interface {})
+--------------------------------------------------------
+
+--------------------------------------------------------
+Resource ecs_sigma_alarm.generic["gateway_mesh_status"]%!s(PANIC=String method: interface conversion: interface {} is nil, not map[string]interface {})
+--------------------------------------------------------
+
+--------------------------------------------------------
+Resource ecs_sigma_alarm.generic["goxy_service"]%!s(PANIC=String method: interface conversion: interface {} is nil, not map[string]interface {})
+--------------------------------------------------------
+
+--------------------------------------------------------
+Resource ecs_sigma_alarm.generic["horreo_service"]%!s(PANIC=String method: interface conversion: interface {} is nil, not map[string]interface {})
+--------------------------------------------------------
+
+--------------------------------------------------------
+Resource ecs_sigma_alarm.generic["ingress_service"]%!s(PANIC=String method: interface conversion: interface {} is nil, not map[string]interface {})
+--------------------------------------------------------
+
+--------------------------------------------------------
+Resource ecs_sigma_alarm.generic["jenkins_service"]%!s(PANIC=String method: interface conversion: interface {} is nil, not map[string]interface {})
+--------------------------------------------------------
+
+--------------------------------------------------------
+Resource ecs_sigma_alarm.generic["mongo_service"]%!s(PANIC=String method: interface conversion: interface {} is nil, not map[string]interface {})
+--------------------------------------------------------
+
+--------------------------------------------------------
+Resource ecs_sigma_alarm.generic["mu_writer_service"]%!s(PANIC=String method: interface conversion: interface {} is nil, not map[string]interface {})
+--------------------------------------------------------
+
+--------------------------------------------------------
+Resource ecs_sigma_alarm.generic["nomad_autoscaler_service"]%!s(PANIC=String method: interface conversion: interface {} is nil, not map[string]interface {})
+--------------------------------------------------------
+
+--------------------------------------------------------
+Resource ecs_sigma_alarm.generic["nomad_cluster"]%!s(PANIC=String method: interface conversion: interface {} is nil, not map[string]interface {})
+--------------------------------------------------------
+
+--------------------------------------------------------
+Resource ecs_sigma_alarm.generic["nomad_node"]%!s(PANIC=String method: interface conversion: interface {} is nil, not map[string]interface {})
+--------------------------------------------------------
+
+--------------------------------------------------------
+Resource ecs_sigma_alarm.generic["nomad_resource_usage"]%!s(PANIC=String method: interface conversion: interface {} is nil, not map[string]interface {})
+--------------------------------------------------------
+
+--------------------------------------------------------
+Resource ecs_sigma_alarm.generic["nomad_service"]%!s(PANIC=String method: interface conversion: interface {} is nil, not map[string]interface {})
+--------------------------------------------------------
+
+--------------------------------------------------------
+Resource ecs_sigma_alarm.generic["postgres_service"]%!s(PANIC=String method: interface conversion: interface {} is nil, not map[string]interface {})
+--------------------------------------------------------
+
+--------------------------------------------------------
+Resource ecs_sigma_alarm.generic["prometheus_service"]%!s(PANIC=String method: interface conversion: interface {} is nil, not map[string]interface {})
+--------------------------------------------------------
+
+--------------------------------------------------------
+Resource ecs_sigma_alarm.generic["rabbit_service"]%!s(PANIC=String method: interface conversion: interface {} is nil, not map[string]interface {})
+--------------------------------------------------------
+
+--------------------------------------------------------
+Resource ecs_sigma_alarm.generic["redis_service"]%!s(PANIC=String method: interface conversion: interface {} is nil, not map[string]interface {})
+--------------------------------------------------------
+
+--------------------------------------------------------
+Resource ecs_sigma_alarm.generic["system_resource_usage"]%!s(PANIC=String method: interface conversion: interface {} is nil, not map[string]interface {})
+--------------------------------------------------------
+
+--------------------------------------------------------
+Resource ecs_sigma_alarm.generic["vault_service"]%!s(PANIC=String method: interface conversion: interface {} is nil, not map[string]interface {})
+--------------------------------------------------------
+
+--------------------------------------------------------
+Resource ecs_sigma_alarm.node%!s(PANIC=String method: interface conversion: interface {} is nil, not map[string]interface {})
+--------------------------------------------------------
+
+--------------------------------------------------------
+Resource ecs_sigma_alarm.service["fabio"]%!s(PANIC=String method: interface conversion: interface {} is nil, not map[string]interface {})
+--------------------------------------------------------
+
+--------------------------------------------------------
+Resource ecs_sigma_alarm.service["fabioecs"]%!s(PANIC=String method: interface conversion: interface {} is nil, not map[string]interface {})
+--------------------------------------------------------
+
+--------------------------------------------------------
+Resource ecs_sigma_alarm.service["gateway"]%!s(PANIC=String method: interface conversion: interface {} is nil, not map[string]interface {})
+--------------------------------------------------------
+
+--------------------------------------------------------
+Resource ecs_sigma_alarm.service["mongo"]%!s(PANIC=String method: interface conversion: interface {} is nil, not map[string]interface {})
+--------------------------------------------------------
+
+--------------------------------------------------------
+Resource ecs_sigma_alarm.service["redis"]%!s(PANIC=String method: interface conversion: interface {} is nil, not map[string]interface {})
+--------------------------------------------------------
+

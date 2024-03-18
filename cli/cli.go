@@ -4,9 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/charmbracelet/bubbles/spinner"
 	tea "github.com/charmbracelet/bubbletea"
-	"github.com/charmbracelet/lipgloss"
 	"github.com/smorenodp/tftarget/screens"
 	"github.com/smorenodp/tftarget/terraform"
 )
@@ -22,12 +20,8 @@ type Model struct {
 	Command    terraform.Command
 	listScreen screens.ListScreen
 }
-type commandFinishedMsg struct{ err error }
 
 func New(tf *terraform.TFClient) Model {
-	s := spinner.New()
-	s.Spinner = spinner.Dot
-	s.Style = lipgloss.NewStyle().Foreground(lipgloss.Color("160"))
 
 	return Model{screen: screens.NewSpinnerScreen(tf), tfClient: tf, Command: terraform.NewCommand(tf.ChDir, tf.VarFile)}
 }
